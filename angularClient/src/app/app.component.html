@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-warning my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+          <ul class="text-center list-inline py-3">
+            <li class="list-inline-item"><a routerLink="/addusertype" routerLinkActive="active" class="btn btn-light bg-danger" style="color: rgb(98, 31, 187); font-size: 2rem;">Add User Type</a></li>
+            <li class="list-inline-item"><a routerLink="/types" routerLinkActive="active" class="btn btn-light bg-danger" style="color: rgb(98, 31, 187); font-size: 2rem;">Type's List</a></li>
+            <li class="list-inline-item"><a routerLink="/adduser" routerLinkActive="active" class="btn btn-light bg-danger" style="color: rgb(98, 31, 187); font-size: 2rem;">Add User</a></li>
+            <li class="list-inline-item"><a routerLink="/users" routerLinkActive="active" class="btn btn-light bg-danger" style="color: rgb(98, 31, 187); font-size: 2rem;">User's List</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h1 class="text-center" style="color:rgb(180, 17, 17); font-size: 5rem;">Fullstack Final Project</h1>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

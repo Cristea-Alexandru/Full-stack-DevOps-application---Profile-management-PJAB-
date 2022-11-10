@@ -1,0 +1,16 @@
+<div class="card my-5" style="width: 80%; margin: 0 auto; background-color: rgb(206, 16, 16);">
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #typeForm="ngForm">
+            <h2 class="text-center" style="color: rgb(54, 30, 185)"> Add a Type </h2><br>
+            <div class="form-group">
+                <input style="width: 50%; margin: 0 auto;" type="text" [(ngModel)]="type.type"
+                    class="form-control text-center" id="type" name="type" placeholder="Type" required #name="ngModel">
+            </div>
+            <br>
+            <div style="text-align: center; width: 100%;">
+                <button type="submit" [disabled]="!typeForm.form.valid" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>

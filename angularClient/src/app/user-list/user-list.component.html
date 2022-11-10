@@ -1,0 +1,61 @@
+<div class="card my-5" style="width: 80%; margin: 0 auto; background-color: rgb(206, 16, 16)">
+    <div class="container">
+        <div class="card-body">
+            <h2 class="text-center" style="color: rgb(54, 30, 185)"> Watch the Users </h2><br>
+            <table class="table table-bordered table-striped">
+                <thead class="thead-black">
+                    <tr style="color: rgb(54, 30, 185)">
+                        <th style="cursor: pointer;" [appSort]="users" data-order="desc" data-name="type" scope="col">
+                            Type User</th>
+                        <th style="cursor: pointer;" [appSort]="users" data-order="desc" data-name="name" scope="col">
+                            Name</th>
+                        <th style="cursor: pointer;" [appSort]="users" data-order="desc" data-name="firstName"
+                            scope="col">First Name</th>
+                        <th style="cursor: pointer;" [appSort]="users" data-order="desc" data-name="email" scope="col">
+                            E-mail</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users let i = index">
+                        <td>{{ user.type }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.firstName }}</td>
+                        <td>{{ user.email }}</td>
+                        <td style="text-align: center;">
+                            <button type="button" routerLink="../adduser/{{user.id}}"
+                                class="btn btn-success">Edit</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="button" (click)="remove(i)" class="btn btn-danger">Remove</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="button" (click)="open(content, i)" class="btn btn-info">User Info</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="text-center" style="color: rgb(12, 252, 4); font-size: 3rem;">{{ message }}</div>
+
+<!-- Modal to Display the User's Information -->
+<ng-template #content let-modal>
+    <div class="modal-header justify-content-center">
+        <h4 class="modal-title" id="modal-basic-title" style="color: red;">User Information</h4>
+    </div>
+    <div class="modal-body justify-content-center">
+        <ul style="list-style-type: none; color: rgb(14, 27, 214);">
+            <li style="text-align: center;"><span style="font-weight: bolder;">User Type : &nbsp;&nbsp;&nbsp;</span> {{
+                users[userIndex].type }}</li><br>
+            <li style="text-align: center;"><span style="font-weight: bolder;">User Name : &nbsp;&nbsp;&nbsp;</span> {{
+                users[userIndex].name }}</li><br>
+            <li style="text-align: center;"><span style="font-weight: bolder;">User First Name :
+                    &nbsp;&nbsp;&nbsp;</span> {{ users[userIndex].firstName }}</li><br>
+            <li style="text-align: center;"><span style="font-weight: bolder;">User Email : &nbsp;&nbsp;&nbsp;</span> {{
+                users[userIndex].email }}</li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Close</button>
+    </div>
+</ng-template>

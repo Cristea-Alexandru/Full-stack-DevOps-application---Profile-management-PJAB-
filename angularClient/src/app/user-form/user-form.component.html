@@ -1,0 +1,36 @@
+<div class="card my-5" style="width: 80%; margin: 0 auto; background-color: rgb(206, 16, 16);">
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+            <h2 class="text-center" style="color: rgb(54, 30, 185)"> Add a User </h2><br>
+            <div class="form-group">
+                <input style="width: 50%; margin: 0 auto;" type="text" [(ngModel)]="user.name"
+                    class="form-control text-center" id="name" name="name" placeholder="Name" required #name="ngModel">
+            </div>
+
+            <div class="form-group">
+                <input style="width: 50%; margin: 0 auto;" type="text" [(ngModel)]="user.firstName"
+                    class="form-control text-center" id="firstName" name="firstName" placeholder="FirstName" required
+                    #name="ngModel">
+            </div>
+
+            <div class="form-group">
+                <input style="width: 50%; margin: 0 auto;" type="email" [(ngModel)]="user.email"
+                    class="form-control text-center" id="email" name="email" placeholder="E-mail" required
+                    #name="ngModel">
+            </div>
+
+            <div class="form-group">
+                <select name="type" style="width: 50%; margin: 0 auto;" class="form-control text-center"
+                    [(ngModel)]="user.type">
+                    <option [value]="type" *ngFor="let type of types">{{ type }}</option>
+                </select>
+            </div>
+
+            <br>
+            <div style="text-align: center; width: 100%;">
+                <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>
