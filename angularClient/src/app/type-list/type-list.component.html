@@ -12,8 +12,8 @@
             </thead>
             <tbody>
                 <tr *ngFor="let type of types let i = index">
-                    <td>{{ type.id }}</td>
-                    <td>{{ type.type }}</td>
+                    <td style="color: white; text-align: center;">{{ type.id }}</td>
+                    <td style="color: white; text-align: center;">{{ type.type }}</td>
                     <td style="text-align: center;">
                         <button type="button" routerLink="../addusertype/{{type.id}}"
                             class="btn btn-success">Edit</button>
